@@ -12,29 +12,29 @@ def merge_sort(array):
 
         left_ind = 0
         right_ind = 0
-        result_ind = 0
-        result_array = [None] * len(array)
+        merge_ind = 0
+        merge_array = [None] * len(array)
         while left_ind < len(left_array) and right_ind < len(right_array):
             if left_array[left_ind] < right_array[right_ind]:
-                result_array[result_ind] = right_array[right_ind]
+                merge_array[merge_ind] = right_array[right_ind]
                 right_ind = right_ind + 1
             else:
-                result_array[result_ind] = left_array[left_ind]
+                merge_array[merge_ind] = left_array[left_ind]
                 left_ind = left_ind + 1
             
-            result_ind = result_ind + 1
+            merge_ind = merge_ind + 1
 
         while right_ind < len(right_array):
-            result_array[result_ind] = right_array[right_ind]
+            merge_array[merge_ind] = right_array[right_ind]
             right_ind = right_ind + 1
-            result_ind = result_ind + 1
+            merge_ind = merge_ind + 1
 
         while left_ind < len(left_array):
-            result_array[result_ind] = left_array[left_ind]
+            merge_array[merge_ind] = left_array[left_ind]
             left_ind = left_ind + 1
-            result_ind = result_ind + 1
+            merge_ind = merge_ind + 1
         
-        return result_array
+        return merge_array
     else:
         return array
 
